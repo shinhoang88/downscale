@@ -1,0 +1,408 @@
+<sdf version='1.6'>
+  <model name='downscale'>
+    <link name='base'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>2e-06 -1.6e-05 0.109059 0 -0 0</pose>
+        <mass>51.8879</mass>
+        <inertia>
+          <ixx>0.10737</ixx>
+          <ixy>3.45294e-07</ixy>
+          <ixz>-1.70028e-05</ixz>
+          <iyy>0.106712</iyy>
+          <iyz>0.000112248</iyz>
+          <izz>0.00463126</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/base.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/base.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name='L1'>
+      <pose frame=''>0 0 0.571 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-1e-06 0.016252 -0.038952 0 -0 0</pose>
+        <mass>3.82019</mass>
+        <inertia>
+          <ixx>0.0312187</ixx>
+          <ixy>-8.25822e-07</ixy>
+          <ixz>1.00574e-06</ixz>
+          <iyy>0.0117066</iyy>
+          <iyz>-0.00266196</iyz>
+          <izz>0.0196261</izz>
+        </inertia>
+      </inertial>
+      <collision name='L1_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L1_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='J1' type='revolute'>
+      <child>L1</child>
+      <parent>base</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>300</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L2'>
+      <pose frame=''>0 0 0.571 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-6.8e-05 0.001939 0.206301 0 -0 0</pose>
+        <mass>2.90084</mass>
+        <inertia>
+          <ixx>0.0577753</ixx>
+          <ixy>-8.21631e-08</ixy>
+          <ixz>3.8056e-05</ixz>
+          <iyy>0.0451694</iyy>
+          <iyz>0.00132668</iyz>
+          <izz>0.0149067</izz>
+        </inertia>
+      </inertial>
+      <collision name='L2_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L2_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='J2' type='revolute'>
+      <child>L2</child>
+      <parent>L1</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-2.26893</lower>
+          <upper>2.26893</upper>
+          <effort>300</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L3'>
+      <pose frame=''>0 0 1.118 0 0 -0</pose>
+      <inertial>
+        <pose frame=''>-5.7e-05 0.020022 -0.030685 0 -0 0</pose>
+        <mass>2.04243</mass>
+        <inertia>
+          <ixx>0.013794</ixx>
+          <ixy>-8.30215e-06</ixy>
+          <ixz>3.71834e-06</ixz>
+          <iyy>0.00420303</iyy>
+          <iyz>-0.00129388</iyz>
+          <izz>0.00964294</izz>
+        </inertia>
+      </inertial>
+      <collision name='L3_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L3_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='J3' type='revolute'>
+      <child>L3</child>
+      <parent>L2</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>300</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L4'>
+      <pose frame=''>0 0 1.118 0 0 -0</pose>
+      <inertial>
+        <pose frame=''>6.2e-05 0.001918 0.189508 0 -0 0</pose>
+        <mass>1.77642</mass>
+        <inertia>
+          <ixx>0.0258869</ixx>
+          <ixy>1.30676e-06</ixy>
+          <ixz>-2.85299e-06</ixz>
+          <iyy>0.0200869</iyy>
+          <iyz>0.000841274</iyz>
+          <izz>0.00668728</izz>
+        </inertia>
+      </inertial>
+      <collision name='L4_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L4_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='J4' type='revolute'>
+      <child>L4</child>
+      <parent>L3</parent>
+      <axis>
+        <xyz>-0 -1 0</xyz>
+        <limit>
+          <lower>-2.26893</lower>
+          <upper>2.26893</upper>
+          <effort>300</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L5'>
+      <pose frame=''>0 0 1.602 0 0 -0</pose>
+      <inertial>
+        <pose frame=''>-0.000102 0.003579 -0.024596 0 -0 0</pose>
+        <mass>1.16222</mass>
+        <inertia>
+          <ixx>0.00473694</ixx>
+          <ixy>-5.40343e-06</ixy>
+          <ixz>2.57586e-06</ixz>
+          <iyy>0.00147341</iyy>
+          <iyz>-0.000122625</iyz>
+          <izz>0.00327728</izz>
+        </inertia>
+      </inertial>
+      <collision name='L5_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L5_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='J5' type='revolute'>
+      <child>L5</child>
+      <parent>L4</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>300</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L6'>
+      <pose frame=''>0 0 1.602 0 0 -0</pose>
+      <inertial>
+        <pose frame=''>5.9e-05 0.001998 0.140834 0 -0 0</pose>
+        <mass>1.11995</mass>
+        <inertia>
+          <ixx>0.0073673</ixx>
+          <ixy>6.51011e-07</ixy>
+          <ixz>-1.24797e-06</ixz>
+          <iyy>0.00540698</iyy>
+          <iyz>0.000419113</iyz>
+          <izz>0.00250484</izz>
+        </inertia>
+      </inertial>
+      <collision name='L6_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L6.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L6_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L6.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='J6' type='revolute'>
+      <child>L6</child>
+      <parent>L5</parent>
+      <axis>
+        <xyz>-0 -1 0</xyz>
+        <limit>
+          <lower>-2.26893</lower>
+          <upper>2.26893</upper>
+          <effort>300</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L7'>
+      <pose frame=''>0 0 1.9165 0 0 -0</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.033835 0 -0 0</pose>
+        <mass>0.15542</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='L7_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L7.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L7_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/L7.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='J7' type='revolute'>
+      <child>L7</child>
+      <parent>L6</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>300</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+  </model>
+</sdf>
