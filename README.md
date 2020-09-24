@@ -9,3 +9,6 @@ Urdf description is load by Gazebo-ROS plugin:
 
 ![Optional Text](https://github.com/shinhoang88/media_files/blob/master/7DOF_manipulator_downscale_ver.png)
 
+- Author        : Phi Tien Hoang
+- E-mail        : phitien@skku.edu
+- Organization  : Robotory-SKKU-S.Korea
